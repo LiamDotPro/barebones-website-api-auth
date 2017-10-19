@@ -10,6 +10,9 @@ const state = {
 const mutations = {
   SET_TOKEN(state, token) {
     state.token = token
+  },
+  EMPTY_TOKEN(state, token) {
+    state.token = ''
   }
 }
 
@@ -20,6 +23,9 @@ const actions = {
   },
   add_new_token: ({commit}, token) => {
     commit('SET_TOKEN', token)
+  },
+  empty_token: ({commit}) => {
+    commit('EMPTY_TOKEN')
   }
 }
 

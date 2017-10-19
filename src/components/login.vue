@@ -1,9 +1,11 @@
 <template>
   <div class="login">
     <h1>Login</h1>
-    <input v-model="username">
-    <input v-model="password">
-    <button @click="attemptLogin">Login</button>
+    <form @submit.prevent="attemptLogin">
+      <input v-model="username" type="email" required>
+      <input v-model="password" type="password">
+      <button type="submit">Login</button>
+    </form>
     <h2>{{error}}</h2>
     <h2>{{getTokenFromState}}</h2>
     <router-link to="/">
@@ -33,6 +35,7 @@
           } else if (res.data.message === 'ok') {
             this.$store.dispatch('add_new_token', res.data.token)
             this.$ls.set('token', res.data.token, 14400000)
+            this.$router.push('/dashboard')
           }
         })
       }
