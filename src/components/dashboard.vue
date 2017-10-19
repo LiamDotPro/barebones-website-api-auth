@@ -2,14 +2,19 @@
   <div class="dashboard">
     <h1>Dashboard</h1>
     <button @click="logout">logout</button>
+    <user-list></user-list>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
+  import userList from '../components/dashboard/user-list'
 
   export default {
     name: 'dashboard',
+    components: {
+      userList
+    },
     data() {
       return {}
     },

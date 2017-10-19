@@ -4,7 +4,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  token: ''
+  token: '',
+  users: {
+    userList: [],
+    userMessage: ''
+  }
+
 }
 
 const mutations = {
@@ -13,6 +18,12 @@ const mutations = {
   },
   EMPTY_TOKEN(state, token) {
     state.token = ''
+  },
+  ADD_USER(state, obj) {
+
+  },
+  REGISTER_USER(state, obj) {
+
   }
 }
 
@@ -26,6 +37,10 @@ const actions = {
   },
   empty_token: ({commit}) => {
     commit('EMPTY_TOKEN')
+  },
+  // User actions
+  add_user: ({commit}, obj) => {
+    commit('ADD_USER', obj)
   }
 }
 
