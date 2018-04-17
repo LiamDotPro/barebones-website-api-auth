@@ -1,5 +1,7 @@
 # barebones-auth
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/LiamDotPro/barebones-website-api-auth.svg)](https://greenkeeper.io/)
+
 > A website to demonstrate json webtokens authentication
 
 ## Build Setup
